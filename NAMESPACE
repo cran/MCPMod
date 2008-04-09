@@ -1,0 +1,18 @@
+import(lattice, mvtnorm)
+
+export(LP, MCPMod, betaMod, critVal, emax, exponential, fullMod, 
+      genDFdata, guesst, getPars, linear, linlog, logistic, modelMeans,
+      mvtnorm.control, planMM, plotModels, powCalc, powerMM, quadratic,
+      sampSize, sigEmax)
+
+S3method(print, MCPMod)
+S3method(print, summary.MCPMod)
+S3method(summary, MCPMod)
+S3method(print, sampSize)
+S3method(print, planMM)
+S3method(print, LP)
+S3method(plot, powerMM)
+S3method(plot, LP)
+S3method(plot, MCPMod)
+S3method(plot, fullMod)
+S3method(plot, planMM)

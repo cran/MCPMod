@@ -1,0 +1,124 @@
+\name{guesst}
+\alias{guesst}
+\title{ Calculate guesstimates based on prior knowledge }
+\description{
+Calculates guesstimates for standardized model parameter(s) 
+using the general approach described in Pinheiro et al. (2006). 
+}
+\usage{
+guesst(d, p, model = c("emax", "exponential", "logistic", "quadratic",
+       "betaMod", "sigEmax"), less = TRUE,  local = FALSE,
+       dMax, Maxd, scal)
+}
+\arguments{
+  \item{d}{ Vector containing dose value(s). }
+  \item{p}{ Vector of expected percentages of the maximum effect achieved at d. }
+  \item{model}{ Character string. Should be one of "emax", "exponential",
+               "quadratic", "betaMod", "sigEmax". }
+  \item{less}{ Logical, only needed in case of quadratic model.
+            Determines if d is smaller (\code{less=TRUE}) or larger (\code{less=FALSE})
+            than dopt (see Pinheiro et al. (2006) for details).}
+  \item{local}{ Logical indicating whether local or asymptotic version
+           of guesstimate should be derived (defaults to \code{FALSE}).
+           Only needed for emax, logistic and sigEmax model. 
+           When \code{local=TRUE} the maximum dose must be provided via 
+           \code{Maxd}.}
+  \item{dMax}{ Dose at which maximum effect occurs, only needed for the beta model }
+  \item{Maxd}{ Maximum dose to be administered in the trial }
+  \item{scal}{ Scale parameter, only needed for the beta model }
+}
+\details{
+Calculates guesstimates for the parameters of the standardized
+model function based on the prior expected percentage of the maximum effect at 
+certain dose levels. Note that this function should be used together with the \code{plotModels}
+function to ensure that the guesstimates are reflecting the prior
+beliefs.
+
+For the logistic and sigmoid emax models at least two pairs (d,p) need to
+be specified. 
+
+For the beta model the dose at which the maximum effect occurs (dMax)
+has to be specified in addition to the (d,p) pair.
+
+For the exponential model the maximum dose administered (Maxd) needs to 
+be specified in addition to the (d,p) pair.
+
+For the quadratic model one (d,p) pair is needed. It is advisable to
+specify the location of the maximum within the dose range with this
+pair.
+
+For the emax, sigmoid Emax and logistic model one can choose between a local
+and an asymptotic version. In the local version one explicitly forces the
+standardized model function to pass through the specified points (d,p). For the
+asymptotic version it assumed that the standardized model function is equal to 1
+at the largest dose (this is the approach described in Pinheiro et al. (2006)).
+If the local version is used, convergence problems
+with the underlying nonlinear optimization can occur.
+}
+\value{
+Returns a numeric vector containing the guesstimates.
+}
+
+\references{ 
+Pinheiro, J. C., Bretz, F. and Branson, M. (2006). Analysis of dose-response studies - modeling
+approaches, \emph{in} N. Ting (ed.), \emph{Dose Finding in Drug Development}, Springer, New York,
+pp. 146--171
+}
+
+\examples{
+# Emax model
+# Expected percentage of maximum effect: 0.8 is associated with
+# dose 0.3 (d,p)=(0.3, 0.8), dose range [0,1]
+emx1 <- guesst(d=0.3, p=0.8, model="emax")
+# local approach
+emx2 <- guesst(d=0.3, p=0.8, model="emax", local = TRUE, Maxd = 1)
+# plot models
+models <- list(emax=c(emx1, emx2))
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+
+# Logistic model
+# Select two (d,p) pairs (0.2, 0.5) and (0.6, 0.95)
+lgc1 <- guesst(d = c(0.2, 0.5), p = c(0.6, 0.95), "logistic")
+# local approach
+lgc2 <- guesst(d = c(0.2, 0.5), p = c(0.6, 0.95), "logistic", 
+               local = TRUE, Maxd = 1)
+# plot models
+models <- list(logistic = matrix(c(lgc1, lgc2), byrow = TRUE, nrow = 2))
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+
+# Beta Model
+# Select one pair (d,p): (0.5,0.5)
+# dose, where maximum occurs: 0.8
+bta <- guesst(d=0.5, p=0.5, model="betaMod", dMax=0.8, scal=1.2)
+# plot
+models <- list(betaMod = bta)
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+
+# Sigmoid Emax model
+# Select two (d,p) pairs (0.2, 0.5) and (0.6, 0.95)
+sgE1 <- guesst(d = c(0.2, 0.5), p = c(0.6, 0.95), "sigEmax")
+# local approach
+sgE2 <- guesst(d = c(0.2, 0.5), p = c(0.6, 0.95), "sigEmax",
+               local = TRUE, Maxd = 1)
+models <- list(sigEmax = matrix(c(sgE1, sgE2), byrow = TRUE, nrow = 2))
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+
+# Quadratic model
+# For the quadratic model it is assumed that the maximum effect occurs at 
+# dose 0.7
+quad <- guesst(d = 0.7, p = 1, "quadratic")
+models <- list(quadratic = quad)
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+
+# exponential model
+# (d,p) = (0.8,0.5)
+expo <- guesst(d = 0.8, p = 0.5, "exponential", Maxd=1)
+models <- list(exponential = expo)
+plotModels(models, c(0,1), base= 0, maxEff = 1)
+}
+\seealso{ \code{\link{emax}}, \code{\link{logistic}}, \code{\link{betaMod}},
+          \code{\link{sigEmax}}, 
+          \code{\link{quadratic}}, \code{\link{exponential}},
+          \code{\link{plotModels}}
+          }
+\keyword{ models }

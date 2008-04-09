@@ -1,0 +1,14 @@
+To do
+- allow for different maxEffs (and baselines)
+  for planning
+- allow for different clinical relevance thresholds for
+  analysis
+- add covariates into code
+- allow for dose estimation with active control group
+- add covMu argument for planning functions
+- confint method for MCPMod
+- Function to evaluate power and precision of the dose
+  estimate (under a certain dose design) by simulation
+- Function to interactively choose guesstimates
+- Use of global optimization routines in case of 
+  failed convergence for non-linear models
