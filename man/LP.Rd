@@ -96,10 +96,12 @@ plot(LPobj)
 LP(models, "betaMod", "LP1", 
    paramRange = matrix(c(0.3,1.9,0.4,2.5),nrow=2),
    doses, 0, 0.4, 1, 60, alpha=0.05, len=c(10,4), scal=200)
+\dontrun{
 #  Time consuming example
 LPobj <- LP(models, "logistic", "both",
             paramRange = matrix(c(40,5,60,15),nrow=2),    
             doses, 0, 0.4, 1, 60, alpha=0.05, len=c(10,4), scal=200)
 plot(LPobj)
+}
 }
 \keyword{ design }

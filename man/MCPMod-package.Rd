@@ -6,17 +6,16 @@ Design and Analysis of Dose-Finding Studies
 }
 \description{
 This package implements a methodology for dose-response analysis
-that combines aspects of multiple comparison procedures and modeling approaches (Bretz,
-Pinheiro, and Branson 2005). The package provides tools for the analysis of dose finding
-trials as well as a variety of tools necessary to plan a trial to be conducted with the MCPMod
-methodology.
-}
+ that combines aspects of multiple comparison procedures and modeling approaches
+ (Bretz, Pinheiro and Branson, (2005)). The package provides tools for the analysis 
+ of dose finding trials as well as a variety of tools necessary to plan a trial to 
+ be conducted with the MCPMod methodology.}
 \details{
 \tabular{ll}{
 Package: \tab MCPMod\cr
 Type: \tab Package\cr
-Version: \tab 0.1-1\cr
-Date: \tab 2008-04-09\cr
+Version: \tab 0.1-2\cr
+Date: \tab 2008-04-23\cr
 License: \tab GPL-3\cr
 }
 }

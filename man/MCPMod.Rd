@@ -11,10 +11,9 @@ Bretz et al. (2005).
 }
 \usage{
 MCPMod(data, models = NULL, contMat = NULL, critV = NULL, resp = "resp",
-       dose = "dose", off = NULL, scal = NULL, alpha = 0.025,
-       twoSide = FALSE, 
-       selModel = c("maxT", "AIC", "BIC", "aveAIC", "aveBIC"),
-       doseEst = c("MED2", "MED1", "MED3", "ED"), std = TRUE,
+       dose = "dose", off = NULL, scal = NULL, alpha = 0.025, 
+       twoSide = FALSE, selModel = c("maxT", "AIC", "BIC", "aveAIC", 
+       "aveBIC"), doseEst = c("MED2", "MED1", "MED3", "ED"), std = TRUE,
        start = NULL, uModPars = NULL, addArgs = NULL, dePar = NULL,
        clinRel = NULL, lenDose = 101, pW = NULL,
        control = list(maxiter = 100, tol = 1e-06, minFactor = 1/1024),

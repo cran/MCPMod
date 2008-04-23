@@ -80,17 +80,21 @@ models <- list(linear = NULL, emax = c(25),
 sampSize(models, doses, base = 0, maxEff = 0.4, sigma = 1,             
          upperN = 80, scal = 200, alpha = 0.05)
 # with different summary function
+\dontrun{
 sampSize(models, doses, base = 0, maxEff = 0.4, sigma = 1,             
          upperN = 90, scal = 200, sumFct = median, alpha = 0.05)
+}
 # with unbalanced allocations (twice as many patients in placebo group
 # than in active dose groups)
 sampSize(models, doses, base = 0, maxEff = 0.4, sigma = 1,            
        alpha = 0.05, upperN = 80, scal = 200, alRatio=c(2,1,1,1,1,1))
 # iterates total sample size instead of sample size in smallest arm
 # in this case no big difference
+\dontrun{
 sampSize(models, doses, base = 0, maxEff = 0.4, sigma = 1,
          alpha = 0.05, upperN = 500, scal = 200, typeN = "total",
          alRatio=c(2,1,1,1,1,1))
+}
 
 # sample size calculation for general matrix of means
 dvec <- c(0, 10, 50, 100)                             

@@ -80,10 +80,12 @@ plot(pM)
 plot(pM, line.at = 0.8, models = "none")
 
 # the same with fullMod object and default alpha
+\dontrun{
 fMod <- fullMod(models, doses, base = 0, maxEff = 0.4, scal=200) 
 pM <- powerMM(fMod, sigma = 1, lower = 10, upper = 100, 
               step = 20, scal = 200)         
 pM
+}
 
 # using unbalanced (but fixed) allocations
 pM <- powerMM(models, doses, base = 0, maxEff = 0.4, sigma = 1,       
