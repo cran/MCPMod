@@ -942,19 +942,21 @@ print.summary.MCPMod <-
   cat("MCPMod\n\n")
   if(x$input$twoSide) side <- "two-sided"
   else side <- "one-sided"            
-  cat("Input parameter:","\n")
+  cat("Input parameters:","\n")
   if(attr(x$cVal, "Calc")){     
     cat(" alpha =", paste(x$input$alpha," (", side,")", sep=""), "\n")
   }
   if(!x$input$testOnly){
-    cat(" clinical relevance =",paste(x$input$clinRel),"\n")
-    cat(" dePar =", paste(x$input$dePar), "\n")
     cat(" model selection:", paste(x$input$selModel[1]),"\n")
     if(is.element(x$input$selModel[1], c("aveAIC", "aveBIC"))){
       pW <- attr(x$fm, "pweights")
       cat(" prior model weights:\n ")
       print(round(pW/sum(pW), digits))
     }
+    cat(" clinical relevance =",paste(x$input$clinRel),"\n")
+    nr <- match(substr(x$input$doseEst,1,2), c("ME", "ED"))
+    dePar <- c("gamma", "p")[nr]
+    cat(paste(" dose estimator: ", x$input$doseEst, " (",dePar, " = ", x$input$dePar, ")", sep=""), "\n")
   } # multiple contrast test information
   cat("\n","Optimal Contrasts:","\n", sep="")
   print(round(x$contMat, digits))

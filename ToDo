@@ -12,3 +12,4 @@ To do
 - Function to interactively choose guesstimates
 - Use of global optimization routines in case of 
   failed convergence for non-linear models
+- verbose argument for print.summary.MCPMod?

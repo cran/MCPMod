@@ -40,7 +40,7 @@ guesst <-
   ## Maxd = Maximum dose administered
   ## scal = dose scale (needed only for betaMod)
   model <- match.arg(model)
-  if(any(p)<=0 | any(p)>1) stop("must have 0 < p <= 1")
+  if(any(p <= 0) | any(p > 1)) stop("must have 0 < p <= 1")
   switch(model,
          emax = {
            if(!local){
@@ -1266,7 +1266,7 @@ print.sampSize <- function(x, ...){
   cat(" Allocations:", alRatio, "\n\n")
   cat(paste(sampMsg), paste(x$samp.size), "\n")
   cat("\n")
-  cat("Associated combined power:", paste(x$approx.power),"\n")
+  cat("Associated", attr(x, "sumFct"),"power:", paste(x$approx.power),"\n")
   cat("Power under models:","\n") 
   print(attr(x$approx.power, "power under models"))
   cat("\n")
