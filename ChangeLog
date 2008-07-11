@@ -1,3 +1,12 @@
+2008-07-11 Bjoern Bornkamp   <bornkamp@statistik.tu-dortmund.de>
+
+    * Edited getTstat and fitModel function to allow for 
+    dose-groups with only 1 patient (replace NA in estimate
+    of group variance with 0).
+
+    * Removed clinRel line from output of summary.MCPMod, when
+    doseEst = "ED".
+    
 2008-05-06 Bjoern Bornkamp   <bornkamp@statistik.tu-dortmund.de>
 
     * Include José's comments for output of MCPMod and sampSize 

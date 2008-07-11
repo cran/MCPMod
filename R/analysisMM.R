@@ -31,6 +31,10 @@ getTstat <-
   ## pooled standard deviation
   sdv <- tapply(resp, dose, sd)
   if (length(n) == 1) n <- rep(n, length(sdv))
+  # remove NAs for dose groups with only 1 obs.
+  if(any(n==1)){
+    sdv[n==1] <- 0
+  }
   n1 <- n - 1
   sdv <- sqrt(sum(n1 * sdv^2)/sum(n1))
 
@@ -233,7 +237,10 @@ fitModel <-
   doseM <- sort(unique(data$dose))
   n <- as.vector(table(data$dose))
   dataM <- data.frame(doseM = doseM, respM = respM, n = n)
-  S2 <- sum((n - 1) * tapply(data$resp, data$dose, var))
+  vars <- tapply(data$resp, data$dose, var)
+  # allow for dose groups with only one patient
+  vars[n==1] <- 0 # replace NAs with 0
+  S2 <- sum((n - 1) * vars)
   
   if (!is.na(modelNum)) {               # built-in model
     if (is.element(modelNum, 1:3)) {    # linear models
@@ -941,9 +948,9 @@ print.summary.MCPMod <-
 {
   cat("MCPMod\n\n")
   if(x$input$twoSide) side <- "two-sided"
-  else side <- "one-sided"            
+  else side <- "one-sided"
   cat("Input parameters:","\n")
-  if(attr(x$cVal, "Calc")){     
+  if(attr(x$cVal, "Calc")){
     cat(" alpha =", paste(x$input$alpha," (", side,")", sep=""), "\n")
   }
   if(!x$input$testOnly){
@@ -953,8 +960,10 @@ print.summary.MCPMod <-
       cat(" prior model weights:\n ")
       print(round(pW/sum(pW), digits))
     }
-    cat(" clinical relevance =",paste(x$input$clinRel),"\n")
     nr <- match(substr(x$input$doseEst,1,2), c("ME", "ED"))
+    if(nr == 1){
+      cat(" clinical relevance =",paste(x$input$clinRel),"\n")
+    }
     dePar <- c("gamma", "p")[nr]
     cat(paste(" dose estimator: ", x$input$doseEst, " (",dePar, " = ", x$input$dePar, ")", sep=""), "\n")
   } # multiple contrast test information
@@ -996,12 +1005,12 @@ print.summary.MCPMod <-
       print(round(cof, digits))
     } else { # model averaging
       cat("Model weights:","\n", sep="")
-      print(round(attr(x$fm, "weights"), digits)) 
+      print(round(attr(x$fm, "weights"), digits))
       cat("\nParameter estimates:","\n")
       for(i in which(!is.na(attr(x$fm, c("IC"))))){
-        nam <- names(x$fm)[i]  
+        nam <- names(x$fm)[i]
         cof <- coef(x$fm[[i]])
-        namcof <- names(cof) 
+        namcof <- names(cof)
         namcof <- gsub(" ", "", namcof) # remove white spaces for GUI
         names(cof) <- gsub("doseM", "dose", namcof) # use more obvious names
         cat(paste(nam), "model:\n")
@@ -1009,15 +1018,15 @@ print.summary.MCPMod <-
       }
     }
   } # information about dose estimate
-  cat("\nDose estimate","\n")    
-  attr(x$tdose,"tdType") <- NULL # remove attr for output 
+  cat("\nDose estimate","\n")
+  attr(x$tdose,"tdType") <- NULL # remove attr for output
   if(is.element(x$input$selModel, c("AIC", "BIC", "maxT"))) print(x$tdose)
   else {
     cat("Estimates for models\n")
     print(round(attr(x$tdose,"tdModels"), digits))
-    attr(x$tdose,"tdModels") <- NULL 
+    attr(x$tdose,"tdModels") <- NULL
     cat("Model averaged dose estimate\n")
-    
+
     print(round(x$tdose, digits))
   }
 }
