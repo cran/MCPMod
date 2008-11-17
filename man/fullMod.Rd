@@ -7,7 +7,7 @@
     calling the \code{getPars} function.
 }
 \usage{
-fullMod(models, doses, base, maxEff, off = 1, scal = 1.2 * max(doses))
+fullMod(models, doses, base, maxEff, off = 0.1*max(doses), scal = 1.2 * max(doses))
 }
 \arguments{
   \item{models}{ A list specifying the candidate models. The names of the list entries should

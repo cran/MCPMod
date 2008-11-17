@@ -543,11 +543,11 @@ getPars <-
          quadratic = {
            dMax <- 1/(-2*initEstim)
            b1 <- maxEff/(dMax + initEstim*dMax^2)
-           b2 <- initEstim * abs(b1)
+           b2 <- initEstim * b1
            Par <- c(base, b1, b2)
          },
          emax = {
-           emax.p <- maxEff * (initEstim + max(doses))/max(doses) 
+           emax.p <- maxEff * (initEstim + max(doses))/max(doses)
            Par <- c(base, emax.p, initEstim)
          },
          exponential = {
@@ -566,13 +566,13 @@ getPars <-
            Par <- c(base, maxEff, initEstim)
          },
          sigEmax = {
-           ed50 <- initEstim[1]                 
-           h <- initEstim[2]                    
-           dmax <- max(doses)                    
+           ed50 <- initEstim[1]
+           h <- initEstim[2]
+           dmax <- max(doses)
            eMax <- maxEff*(ed50^h+dmax^h)/dmax^h
            Par <- c(e0 = base, eMax = eMax, ed50 = ed50, h = h)
          },
-         { 
+         {
            Par <- do.call(paste(model,"Par", sep=""),
                           list(doses, initEstim, base, maxEff))
          }
@@ -604,7 +604,7 @@ getPars <-
 
 
 fullMod <-
-  function(models, doses, base, maxEff, off = 1, scal = 1.2*max(doses))
+  function(models, doses, base, maxEff, off = 0.1*max(doses), scal = 1.2*max(doses))
 {
   ## calculates parameters for all models in the candidate set
   ## returns a list (similar to the models list) but with all model parameters.

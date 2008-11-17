@@ -1,4 +1,12 @@
-2008-07-11 Bjoern Bornkamp   <bornkamp@statistik.tu-dortmund.de>
+2008-11-17 Bjoern Bornkamp   
+
+    * Synchronized defaults for off parameter in fullMod 
+    (0.1*max(doses) instead of 1).
+    
+    * getPars: Removed bug with a negative maximum effect
+    for quadratic model.
+
+2008-07-11 Bjoern Bornkamp   
 
     * Edited getTstat and fitModel function to allow for 
     dose-groups with only 1 patient (replace NA in estimate
@@ -7,7 +15,7 @@
     * Removed clinRel line from output of summary.MCPMod, when
     doseEst = "ED".
     
-2008-05-06 Bjoern Bornkamp   <bornkamp@statistik.tu-dortmund.de>
+2008-05-06 Bjoern Bornkamp   
 
     * Include José's comments for output of MCPMod and sampSize 
     (include name of dose estimator and summary function)
@@ -16,6 +24,6 @@
     closed to early.)
 
 
-2008-04-22 Bjoern Bornkamp   <bornkamp@statistik.tu-dortmund.de>
+2008-04-22 Bjoern Bornkamp   
 
     * Excluded some examples from checking to reduce check time.
