@@ -160,7 +160,7 @@ getInit <-
   ## later due to some problems with se.fit of the predictions of the
   ## p-linear fit 
   function(data, model = c("emax", "exponential", "logistic", "betaMod",
-                   "sigEmax"), control, scal)
+                   "sigEmax"), scal)
 {
   model <- match.arg(model)             # only built-in allowed
   meanVal <- data$respM
@@ -262,7 +262,7 @@ fitModel <-
       }
     } else {                            # nonlinear built-in model
       if (is.null(start)) {             # need to derive initial values
-        start <- getInit(dataM, model, control, scal)
+        start <- getInit(dataM, model, scal)
       }
       if (modelNum == 4) {      # Emax model
         names(start) <- NULL
@@ -415,7 +415,7 @@ getGrad <-
              eMax <- cf[2]; ed50 <- cf[2]; h <- cf[4]
              den <- (ed50^h + dose^h)
              g1 <- dose^h/den
-             g2 <- -ed50^(h-1)*dose^h*eMax/den^2
+             g2 <- -ed50^(h-1)*dose^h*h*eMax/den^2
              g3 <- eMax*dose^h*ed50^h*lg2(dose/ed50)/den^2
              cbind(1, g1, g2, g3)
            },
@@ -425,17 +425,18 @@ getGrad <-
              if (any(dose > 1)) {
                stop("doses cannot be larger than scal in betaModel")
              }
-             delta1 <- cf[3]; delta2 <- cf[4]
+             delta1 <- cf[3]; delta2 <- cf[4]; eMax <- cf[2] 
              maxDens <- (delta1^delta1)*(delta2^delta2)/
                ((delta1 + delta2)^(delta1+delta2))
              g1 <- ((dose^delta1) * (1 - dose)^delta2)/maxDens
-             g2 <- g1 * lg2(dose) 
-             g3 <- g1 * lg2(1 - dose)
+             g2 <- g1*eMax*(lg2(dose)+lg2(delta1+delta2)-lg2(delta1))
+             g3 <- g1*eMax*(lg2(1-dose)+lg2(delta1+delta2)-lg2(delta2))
              cbind(1, g1, g2, g3)
            },
            "exponential" = {
              delta <- cf[3]
-             cbind(1, exp(dose/delta - 1), exp(dose/delta - 1)*-dose/delta^2 )
+             e1 <- cf[2]
+             cbind(1, exp(dose/delta) - 1, -exp(dose/delta)*dose*e1/delta^2 )
            },
            {
              ## user defined gradient function

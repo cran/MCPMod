@@ -1,29 +1,39 @@
-2008-11-17 Bjoern Bornkamp   
+2008-12-18 Bjoern Bornkamp
 
-    * Synchronized defaults for off parameter in fullMod 
+    * Removed superfluous control argument for getInit function
+
+    * Added a note in the documentation of MCPMod function
+    regarding the returned nls objects.
+
+    * Corrected getGrad function (gradient of exponential,
+    sigEmax and betaMod model).
+
+2008-11-17 Bjoern Bornkamp
+
+    * Synchronized defaults for off parameter in fullMod
     (0.1*max(doses) instead of 1).
-    
+
     * getPars: Removed bug with a negative maximum effect
     for quadratic model.
 
-2008-07-11 Bjoern Bornkamp   
+2008-07-11 Bjoern Bornkamp
 
-    * Edited getTstat and fitModel function to allow for 
+    * Edited getTstat and fitModel function to allow for
     dose-groups with only 1 patient (replace NA in estimate
     of group variance with 0).
 
     * Removed clinRel line from output of summary.MCPMod, when
     doseEst = "ED".
-    
-2008-05-06 Bjoern Bornkamp   
 
-    * Include José's comments for output of MCPMod and sampSize 
+2008-05-06 Bjoern Bornkamp
+
+    * Include José's comments for output of MCPMod and sampSize
     (include name of dose estimator and summary function)
 
-    * guesst: Removed bug in the check of 0 < p <= 1. (Bracket 
+    * guesst: Removed bug in the check of 0 < p <= 1. (Bracket
     closed to early.)
 
 
-2008-04-22 Bjoern Bornkamp   
+2008-04-22 Bjoern Bornkamp
 
     * Excluded some examples from checking to reduce check time.

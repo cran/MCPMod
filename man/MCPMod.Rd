@@ -124,7 +124,13 @@ Bretz et al. (2005). The method consists of two steps:\cr
   \item{corMat}{The correlation matrix.}
   \item{cVal}{The critical value for the multiple contrast test.}
   \item{tStat}{The contrast test-statistics. If 'pVal=TRUE' the p-values are also attached.}
-  \item{fm}{List containing the dose-response model(s) used for dose-estimation.}
+  \item{fm}{List containing the dose-response model(s) used for dose-estimation. WARNING: The
+            model fitting is for computational efficiency done based on the group
+            means and for positive non-linear parameters (e.g. the ED50 parameter in the Emax model) the 
+            estimate in \code{fm} is on log scale. The summary.MCPMod method shows the parameters on their original scale.
+            Hence some care is hence needed when extracting the fitted model objects from \code{fm}
+            (in particular when interest is in standard deviations of predictions, parameter estimates...).
+            }
   \item{tdose}{Estimated target dose, in case of model averaging the dose estimates under
                the individual models are attached.}
 Note: If \code{testOnly=TRUE}, or no model is significant, the object does not contain \code{fm} and \code{tdose} entries

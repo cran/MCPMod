@@ -515,7 +515,7 @@ plot.planMM <- function (x, superpose = TRUE, xlab = "Dose",
 ### plot(pM, resp = "means")                         
 
 getPars <-
-  function(model, doses, initEstim, base, maxEff, off = 1, scal = 1.2*max(doses))
+  function(model, doses, initEstim, base, maxEff, off = 0.1*max(doses), scal = 1.2*max(doses))
 {
   ## calculates the location and scale parameters corresponding to
   ## given base, maxEff, and guesstimates

@@ -8,7 +8,7 @@
 }
 \usage{
 getPars(model, doses, initEstim, base, maxEff,
-        off = 1, scal = 1.2 * max(doses))
+        off = 0.1 * max(doses), scal = 1.2 * max(doses))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
