@@ -48,13 +48,13 @@ MCPMod(data, models = NULL, contMat = NULL, critV = NULL, resp = "resp",
   \item{twoSide}{ Optional logical value deterimining whether two-sided or one-sided testing should be
                   performed. Defaults to FALSE, so one-sided testing. }
   \item{selModel}{ Optional character vector specifying the model selection criterion for dose estimation. Possible values are \cr
-                   \item{"maxT"}{Selects the model corresponding to the largest t-statistic (this is the default). }
-                   \item{"AIC"}{Selects model with smallest AIC}
-                   \item{"BIC"}{ Selects model with smallest BIC}
-                   \item{"aveAIC"}{ Uses a weighted average of the models corresponding to the significant contrasts.
+                   "maxT": Selects the model corresponding to the largest t-statistic (this is the default).\cr
+                   "AIC": Selects model with smallest AIC\cr
+                   "BIC": Selects model with smallest BIC\cr
+                   "aveAIC": Uses a weighted average of the models corresponding to the significant contrasts.
                            The model weights are chosen by the formula: wi = exp(-0.5AICi)/sum(exp(-0.5AICi)).
-                           See Buckland et al. (1997) for details.}
-                   \item{"aveBIC"}{Same as "aveAIC", but the BIC is used to calculate the model weights.}\cr
+                           See Buckland et al. (1997) for details.\cr
+                   "aveBIC": Same as "aveAIC", but the BIC is used to calculate the model weights.\cr
                    }
   \item{doseEst}{ Determines which dose to estimate and which dose estimator to use, possible
                   values are "MED2", "MED1", "MED3" and "ED". See Bretz et al. (2005) for the definition

@@ -1,3 +1,7 @@
+2008-02-02 Bjoern Bornkamp
+
+    * Minor changes in documentation to comply with new Rd parser.
+
 2008-12-18 Bjoern Bornkamp
 
     * Removed superfluous control argument for getInit function
