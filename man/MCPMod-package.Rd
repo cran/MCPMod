@@ -14,8 +14,8 @@ Design and Analysis of Dose-Finding Studies
 \tabular{ll}{
 Package: \tab MCPMod\cr
 Type: \tab Package\cr
-Version: \tab 0.2-2\cr
-Date: \tab 2009-02-02\cr
+Version: \tab 1.0-1\cr
+Date: \tab 2009-02-11\cr
 License: \tab GPL-3\cr
 }
 }
@@ -25,20 +25,27 @@ Bjoern Bornkamp, Jose Pinheiro and Frank Bretz
 Maintainer: Bjoern Bornkamp <bornkamp@statistik.tu-dortmund.de>
 }
 \references{
-Bretz, F., Pinheiro, J. C. and Branson, M. (2005), Combining
+Bornkamp B., Pinheiro J. C., and Bretz, F. (2009), MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
+Bretz, F., Pinheiro, J. C., and Branson, M. (2005), Combining
 multiple comparisons and modeling techniques in dose-response
 studies, \emph{Biometrics}, \bold{61}, 738--748
 
-Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
+Pinheiro, J. C., Bornkamp, B., and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656
 
-Pinheiro, J. C., Bretz, F. and Branson, M. (2006). Analysis of dose-response studies - modeling 
+Pinheiro, J. C., Bretz, F., and Branson, M. (2006). Analysis of dose-response studies - modeling 
 approaches, \emph{in} N. Ting (ed.). \emph{Dose Finding in Drug Development}, Springer, New York,
 pp. 146--171
 }
 \keyword{ package }
 \examples{
+# detailed information regarding MCP-Mod methodology
+# and R-package available via vignette("MCPMod")
+
 # planning a trial for MCPMod
 doses <- c(0,10,25,50,100,150)                                             
 models <- list(linear = NULL, emax = c(25),                                

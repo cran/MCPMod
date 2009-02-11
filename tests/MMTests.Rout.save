@@ -1,6 +1,6 @@
 
-R version 2.6.1 (2007-11-26)
-Copyright (C) 2007 The R Foundation for Statistical Computing
+R version 2.8.1 (2008-12-22)
+Copyright (C) 2008 The R Foundation for Statistical Computing
 ISBN 3-900051-07-0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -19,7 +19,7 @@ Type 'q()' to quit R.
 Loading required package: mvtnorm
 Loading required package: lattice
 > set.seed(1)
-> # Approximately reproduces analysis from biometrics paper
+> # Approximately reproduces analysis from Biometrics paper
 > # (slightly different linlog model used in paper)
 > data(biom)
 > models <- list(emax = 0.2, linlog = NULL, linear = NULL, exponential = c(0.5/log(6),0.15), quadratic = c(-1.7485/2.0485,-1))
@@ -115,7 +115,7 @@ betaMod2     0.792 0.916    0.914       0.638   -0.028    1.000
 70 0.8480795 0.9428028
 90 0.9208864 0.9795448
 attr(,"alRatio")
-[1] 1 1 1 1 1 1
+[1] 1
 attr(,"sumFct")
 [1] "min"  "mean" "max" 
 attr(,"class")
@@ -132,7 +132,7 @@ Input parameters:
 
 Sample size per group: 62 
 
-Associated combined power: 0.8061 
+Associated mean power: 0.8061 
 Power under models: 
      linear        emax    logistic exponential    betaMod1    betaMod2 
      0.7904      0.7729      0.9161      0.7632      0.8259      0.7683 

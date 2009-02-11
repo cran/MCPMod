@@ -1,0 +1,23 @@
+citHeader("To cite MCPMod in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{MCPMod}: An {R} Package for the Design and Analysis of Dose-Finding Studies",
+  author       = personList(as.person("Bj{\"o}rn Bornkamp"),
+                   as.person("Jos{\'e} Pinheiro"),
+                   as.person("Frank Bretz")),
+  journal      = "Journal of Statistical Software",
+  year         = "2009",
+  volume       = "29",
+  number       = "7",
+  pages        = "1--23",
+  url          = "http://www.jstatsoft.org/v29/i07/",
+
+  textVersion  =
+  paste("Bjoern Bornkamp, Jose Pinheiro, Frank Bretz (2009).",
+        "MCPMod: An R Package for the Design and Analysis of Dose-Finding Studies.",
+        "Journal of Statistical Software 29(7), 1-23.",
+        "URL http://www.jstatsoft.org/v29/i07/.")
+)
+
+
+

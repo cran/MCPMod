@@ -1,8 +1,8 @@
 Package: MCPMod
 Type: Package
 Title: Design and Analysis of Dose-Finding Studies
-Version: 0.2-2
-Date: 2009-02-02
+Version: 1.0-1
+Date: 2009-02-11
 Author: Bjoern Bornkamp, Jose Pinheiro and Frank Bretz
 Maintainer: Bjoern Bornkamp <bornkamp@statistik.tu-dortmund.de>
 Depends: mvtnorm, lattice,  R (>= 2.4.1)
@@ -12,4 +12,4 @@ Description: This package implements a methodology for the design and analysis o
  The package provides tools for the analysis of dose finding trials as well as a variety
  of tools necessary to plan a trial to be conducted with the MCPMod methodology.
 License: GPL-3
-Packaged: Mon Feb  2 11:11:18 2009; bornkamp
+Packaged: Fri Feb 13 12:48:29 2009; bornkamp

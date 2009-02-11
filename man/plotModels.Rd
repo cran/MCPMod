@@ -28,6 +28,10 @@ plotModels(models, doses, base, maxEff, nPoints = 200,
   \item{\dots}{ Additional arguments to the \code{xyplot} call. }
 }
 \references{ 
+Bornkamp B., Pinheiro J. C., Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
 Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656

@@ -21,7 +21,11 @@ fullMod(models, doses, base, maxEff, off = 0.1*max(doses), scal = 1.2 * max(dose
 \value{
   Returns an object of class fullMod, containing all parameter values for the models in a list.
 }
-\references{ 
+\references{
+Bornkamp B., Pinheiro J. C., Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
 Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656

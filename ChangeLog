@@ -1,4 +1,8 @@
-2008-02-02 Bjoern Bornkamp
+2009-02-11 Bjoern Bornkamp
+
+    * Minor changes in documentation and inclusion of vignette.
+
+2009-02-02 Bjoern Bornkamp
 
     * Minor changes in documentation to comply with new Rd parser.
 

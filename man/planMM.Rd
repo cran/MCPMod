@@ -41,11 +41,15 @@ planMM(models, doses, n, off = 0.1 * max(doses), scal = 1.2 * max(doses),
   \item{corMat}{Matrix of the contrast correlations.}
 }
 \references{ 
-Bretz, F., Pinheiro, J. and Branson, M. (2005), Combining
+Bornkamp B., Pinheiro J. C., and Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
+Bretz, F., Pinheiro, J., and Branson, M. (2005), Combining
 Multiple Comparisons and Modeling Techniques in Dose-Response
 Studies, \emph{Biometrics}, \bold{61}, 738--748
 
-Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
+Pinheiro, J. C., Bornkamp, B., and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656
 }

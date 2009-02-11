@@ -60,7 +60,11 @@ Returns a numeric vector containing the guesstimates.
 }
 
 \references{ 
-Pinheiro, J. C., Bretz, F. and Branson, M. (2006). Analysis of dose-response studies - modeling
+Bornkamp B., Pinheiro J. C., and Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
+Pinheiro, J. C., Bretz, F., and Branson, M. (2006). Analysis of dose-response studies - modeling
 approaches, \emph{in} N. Ting (ed.), \emph{Dose Finding in Drug Development}, Springer, New York,
 pp. 146--171
 }

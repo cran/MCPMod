@@ -61,6 +61,10 @@ There exists a plot method for the output of the powerMM function. See the examp
  A \code{powerMM} object, i.e. a matrix containing the power values for different sample sizes and models
 }
 \references{ 
+Bornkamp B., Pinheiro J. C., and Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+
 Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656

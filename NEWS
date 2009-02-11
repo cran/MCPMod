@@ -1,6 +1,14 @@
 USER-VISIBLE CHANGES (for detailed changes see ChangeLog in the source package)
 --------------------
 
+Version 1.0 (February 2009)
+-------------
+
+* The package now includes a vignette describing
+  methodology and package. The package R source
+  code is identical to versions 0.2-1 and 0.2-2.
+
+
 Version 0.2 (December 2008)
 -------------
 

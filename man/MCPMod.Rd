@@ -7,7 +7,7 @@
 \description{
 Tests for a dose-response effect with a model-based multiple contrast test and
 estimates a target dose with regression techniques. For details see
-Bretz et al. (2005).
+Bretz et al. (2005) or the enclosed vignette, available via the command \code{vignette("MCPMod")}.
 }
 \usage{
 MCPMod(data, models = NULL, contMat = NULL, critV = NULL, resp = "resp",
@@ -135,16 +135,20 @@ Bretz et al. (2005). The method consists of two steps:\cr
                the individual models are attached.}
 Note: If \code{testOnly=TRUE}, or no model is significant, the object does not contain \code{fm} and \code{tdose} entries
 }
-\references{ 
+\references{
+Bornkamp B., Pinheiro J. C., and Bretz, F. (2009). MCPMod: An            
+R Package for the Design and Analysis of Dose-Finding        
+Studies, \emph{Journal of Statistical Software}, \bold{29}(7), 1--23
+ 
 Bretz, F., Pinheiro, J. C., and Branson, M. (2005), Combining
 multiple comparisons and modeling techniques in dose-response
 studies, \emph{Biometrics}, \bold{61}, 738--748
 
-Pinheiro, J. C., Bornkamp, B. and Bretz, F. (2006). Design and analysis of dose finding studies
+Pinheiro, J. C., Bornkamp, B., and Bretz, F. (2006). Design and analysis of dose finding studies
 combining multiple comparisons and modeling procedures, \emph{Journal of Biopharmaceutical
 Statistics}, \bold{16}, 639--656
 
-Pinheiro, J. C., Bretz, F. and Branson, M. (2006). Analysis of dose-response studies - modeling 
+Pinheiro, J. C., Bretz, F., and Branson, M. (2006). Analysis of dose-response studies - modeling 
 approaches, \emph{in} N. Ting (ed.). \emph{Dose Finding in Drug Development}, Springer, New York,
 pp. 146--171
 
