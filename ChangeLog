@@ -1,3 +1,7 @@
+2009-03-04 Bjoern Bornkamp
+    * Corrected typo in the getGrad function (gradient of
+    sigEmax model).
+
 2009-02-11 Bjoern Bornkamp
 
     * Minor changes in documentation and inclusion of vignette.

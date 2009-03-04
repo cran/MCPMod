@@ -412,7 +412,7 @@ getGrad <-
              cbind(1, 1/den, g1, g2)
            },
            "sigEmax" = {
-             eMax <- cf[2]; ed50 <- cf[2]; h <- cf[4]
+             eMax <- cf[2]; ed50 <- cf[3]; h <- cf[4]
              den <- (ed50^h + dose^h)
              g1 <- dose^h/den
              g2 <- -ed50^(h-1)*dose^h*h*eMax/den^2
