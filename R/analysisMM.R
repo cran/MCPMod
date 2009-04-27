@@ -137,13 +137,15 @@ getInitBeta <-
 {
   ## calculates starting values for the beta model
   ## for the nls algorithm
+  ## dose and m assumed to be ordered 
+  ## in the same order (according to dose)
    dmax <- dose[which(m==max(m))]
-   e0 <- m[names(m)==0]
+   e0 <- m[dose==0]
    emax <- max(m) - e0
    ds <- dose[order(m)[length(m)-1]] # select as 2nd dose the one
                                      # with 2nd highest resp.
    z <- dmax/(scal-dmax)
-   f <- (m[names(m)==ds] - e0)/emax
+   f <- (m[dose==ds] - e0)/emax
    beta <- try(log(f)/(log(ds^z*(scal-ds)) - log(dmax^z*(scal-dmax))))
    alpha <- z*beta
    if(is.na(alpha)) alpha <- beta <- 1 # may occur if f < 0; (1,1) as

@@ -3,6 +3,7 @@ high priority
 - allow for additional covariates
 - more robust fitting procedure (use parameter 
   bounds for non-linear parameters)
+- allow for dose finding with active control
 
 lower priority
 - allow for dose estimation with active control group

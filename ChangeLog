@@ -1,3 +1,8 @@
+2009-04-27 Bjoern Bornkamp
+    * Minor changes in getInitBeta function (replaced "names(m)"
+    directly with "dose"), due to changes in R 2.10.0 the old
+    version did not run anymore.
+
 2009-03-04 Bjoern Bornkamp
     * Corrected typo in the getGrad function (gradient of
     sigEmax model).
