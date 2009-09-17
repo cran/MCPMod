@@ -1,6 +1,14 @@
+2009-09-17 Bjoern Bornkamp
+    * Removed superfluous line of code in guesst function
+    (for exponential model) (thanks to Misha Salganik)
+    
+    * For two-sided testing use max |T_m| as test statistic,
+    before by mistake max T_m was used also in two-sided case
+    (thanks to Daniel Gerhard)
+
 2009-04-27 Bjoern Bornkamp
     * Minor changes in getInitBeta function (replaced "names(m)"
-    directly with "dose"), due to changes in R 2.10.0 the old
+    directly with "dose"), due to changes in R the old
     version did not run anymore.
 
 2009-03-04 Bjoern Bornkamp

@@ -843,6 +843,9 @@ MCPMod <-
   }
   ## MCP test first
   tStat <- signTtest * getTstat(data, n, contMat, resp, dose)
+  if(twoSide){
+    tStat <- abs(tStat)
+  }
   if (is.null(critV)) {
     if(pVal) {
       pVals <- pValues(contMat, n, alpha, tStat, mvtcontrol, twoSide)
