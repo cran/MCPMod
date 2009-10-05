@@ -1,3 +1,12 @@
+2009-10-05 Bjoern Bornkamp
+    * Code now checks the 'models' argument whether there are
+    multiple list entries for a model class (in functions modelMeans 
+    and fullMod) and stops if this is the case (only one list entry
+    allowed per model class). 
+    
+    * Removed problem in powerMM function when only one model
+    is in the candidate set (added a drop = FALSE).
+
 2009-09-17 Bjoern Bornkamp
     * Removed superfluous line of code in guesst function
     (for exponential model) (thanks to Misha Salganik)

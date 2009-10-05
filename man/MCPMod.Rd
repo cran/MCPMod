@@ -197,21 +197,23 @@ models <- list(emax = 0.1, logistic = c(0.2, 0.08),
 dfe3 <- MCPMod(dfData, models, clinRel = 0.4, critV = 1.891, 
            scal = 1.5)
 
-# (ii) constructing a model list
+# (ii) Example for constructing a model list
 
 # Contrasts to be included:
 # Model             guesstimate(s) for stand. model parameter(s) (name)
 # linear            -
-# linear in log     - 
+# linear in log     -
 # Emax              0.2 (ED50)
-# Emax              0.3
+# Emax              0.3 (ED50)
 # exponential       0.7 (delta)
 # quadratic        -0.85 (delta)
 # logistic          0.4  0.09 (ED50, delta)
-# logistic          0.3  0.1
+# logistic          0.3  0.1 (ED50, delta)
 # betaMod           0.3  1.3 (delta1, delta2) 
 # sigmoid Emax      0.5  2 (ED50, h)
-# The names for the list elements need to be written exactly 
+#
+# For each model class exactly one list entry needs to be used.
+# The names for the list entries need to be written exactly 
 # as the model functions ("linear", "linlog", "quadratic", "emax", 
 # "exponential", "logistic", "betaMod", "sigEmax").
 # For models with no parameter in the standardized model just NULL is 

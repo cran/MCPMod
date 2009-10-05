@@ -198,16 +198,20 @@ modelMeans <-
   ## std    - logical variable indicating whether to assume
   ##          standardized versions of built-in models
   
+  namMod <- names(models)
+  if(length(namMod) != length(unique(namMod))){
+    stop("only one list entry allowed for each model class in 'models' argument")
+  }
   ## built-in models with methods for standardized versions
   biModels <- c("emax", "linlog", "linear", "quadratic",
                  "exponential", "logistic", "betaMod", "sigEmax")
   nModels <- length(models)             # number of model elements
   contMap <- vector("list", nModels)
-  names(contMap) <- names(models)
+  names(contMap) <- namMod
   val <- list()
   k <- 1
   nams <- character()
-  for(nm in names(models)) {
+  for(nm in namMod) {
     pars <- models[[nm]]
     if (!is.null(pars) && !is.numeric(pars)) {
       stop("elements of \"models\" must be NULL or numeric")
@@ -614,9 +618,14 @@ fullMod <-
   ## doses  - doses to be used in design
   ## base, maxEff - baseline, maximum effect (over placebo)
   ## off, scal - additional parameters for the linear in log and beta model
+  
+  namMod <- names(models)
+  if(length(namMod) != length(unique(namMod))){
+    stop("only one list entry allowed for each model class in 'models' argument")
+  }  
   complModels <- list()
   i <- 0
-  for(nm in names(models)){
+  for(nm in namMod){
     pars <- models[[nm]]
     if(is.null(pars)){
       Pars <- getPars(nm, doses, NULL, base, maxEff, off); i <- i+1
@@ -907,7 +916,7 @@ powerMM <-
   }
   nSfunc <- length(sumFct)
   for(i in 1:nSfunc){
-    powMat <- cbind(powMat, apply(powMat[,1:nmod], 1, sumFct[i] ,...))
+    powMat <- cbind(powMat, apply(powMat[,1:nmod, drop = FALSE], 1, sumFct[i] ,...))
   } 
 
   dimnames(powMat) <- list(nSeq, c(nams, sumFct))
