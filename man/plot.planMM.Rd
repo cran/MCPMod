@@ -21,6 +21,7 @@
 
 \seealso{ \code{\link{planMM}} }
 \examples{
+\dontrun{
 doses <- c(0, 10, 25, 50, 100, 150)
 models <- list(linear = NULL, emax = c(25),
                logistic = c(50, 10.88111), exponential = c(85),
@@ -40,6 +41,7 @@ dimnames(mMat)[[1]] <- dvec
 pM <- planMM(muMat = mMat, doses = dvec, n = 30)
 plot(pM)
 plot(pM, superpose=FALSE, xlab="Different axis name")
+}
 }
 \keyword{methods}
 \keyword{hplot}

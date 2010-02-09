@@ -1,16 +1,22 @@
+2010-02-09 Bjoern Bornkamp
+    * Adapted control argument to have class GenzBretz to reflect
+    changes in mvtnorm package.
+    * Removed some example code using \dontrun{} to reduce check
+    time.
+
 2009-10-05 Bjoern Bornkamp
     * Code now checks the 'models' argument whether there are
-    multiple list entries for a model class (in functions modelMeans 
+    multiple list entries for a model class (in functions modelMeans
     and fullMod) and stops if this is the case (only one list entry
-    allowed per model class). 
-    
+    allowed per model class).
+
     * Removed problem in powerMM function when only one model
     is in the candidate set (added a drop = FALSE).
 
 2009-09-17 Bjoern Bornkamp
     * Removed superfluous line of code in guesst function
     (for exponential model) (thanks to Misha Salganik)
-    
+
     * For two-sided testing use max |T_m| as test statistic,
     before by mistake max T_m was used also in two-sided case
     (thanks to Daniel Gerhard)

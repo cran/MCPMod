@@ -9,13 +9,17 @@ Design and Analysis of Dose-Finding Studies
  that combines aspects of multiple comparison procedures and modeling approaches
  (Bretz, Pinheiro and Branson, (2005)). The package provides tools for the analysis 
  of dose finding trials as well as a variety of tools necessary to plan a trial to 
- be conducted with the MCPMod methodology.}
+ be conducted with the MCPMod methodology. **Note: The MCPMod package will not be further 
+ developed, all future development of the MCP-Mod methodology will be done in the 
+ DoseFinding R-package, which already contains an extended version of MCP-Mod, and additional
+ functions useful for planning and analysing dose-finding trials.**
+}
 \details{
 \tabular{ll}{
 Package: \tab MCPMod\cr
 Type: \tab Package\cr
-Version: \tab 1.0-5\cr
-Date: \tab 2009-10-05\cr
+Version: \tab 1.0-6\cr
+Date: \tab 2009-02-09\cr
 License: \tab GPL-3\cr
 }
 }
@@ -45,7 +49,7 @@ pp. 146--171
 \examples{
 # detailed information regarding MCP-Mod methodology
 # and R-package available via vignette("MCPMod")
-
+\dontrun{
 # planning a trial for MCPMod
 doses <- c(0,10,25,50,100,150)                                             
 models <- list(linear = NULL, emax = c(25),                                
@@ -70,4 +74,5 @@ dfe <- MCPMod(biom, models, alpha = 0.05, dePar = 0.05, pVal = TRUE,
 summary(dfe)
 # plots data with selected model function
 plot(dfe, complData = TRUE, cR = TRUE)
+}
 }

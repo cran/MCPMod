@@ -71,6 +71,7 @@ Statistics}, \bold{16}, 639--656
 }
 \seealso{ \code{\link{plot.powerMM}},  \code{\link{powCalc}}}
 \examples{
+\dontrun{
 doses <- c(0,10,25,50,100,150)                                         
 models <- list(linear = NULL, emax = 25,                               
                logistic = c(50, 10.88111), exponential= 85,            
@@ -83,13 +84,12 @@ plot(pM)
 # reproduces plot in JBS 16, p.651      
 plot(pM, line.at = 0.8, models = "none")
 
+
 # the same with fullMod object and default alpha
-\dontrun{
 fMod <- fullMod(models, doses, base = 0, maxEff = 0.4, scal=200) 
 pM <- powerMM(fMod, sigma = 1, lower = 10, upper = 100, 
               step = 20, scal = 200)         
 pM
-}
 
 # using unbalanced (but fixed) allocations
 pM <- powerMM(models, doses, base = 0, maxEff = 0.4, sigma = 1,       
@@ -109,5 +109,6 @@ dimnames(mMat)[[1]] <- dvec
 pM <- powerMM(muMat = mMat, doses = dvec, sigma = 2, lower = 10,
               upper = 100, step = 20)         
 pM
+}
 }
 \keyword{ design }

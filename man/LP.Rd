@@ -78,6 +78,7 @@ Statistics}, \bold{16}, 639--656
 }
 \seealso{ \code{\link{plot.LP}}, \code{\link{guesst}} }
 \examples{
+\dontrun{
 doses <- c(0,10,25,50,100,150)
 models <- list(linear=NULL, emax=c(25),
            logistic=c(50,10.88111), exponential=c(85),
@@ -100,7 +101,6 @@ plot(LPobj)
 LP(models, "betaMod", "LP1", 
    paramRange = matrix(c(0.3,1.9,0.4,2.5),nrow=2),
    doses, 0, 0.4, 1, 60, alpha=0.05, len=c(10,4), scal=200)
-\dontrun{
 #  Time consuming example
 LPobj <- LP(models, "logistic", "both",
             paramRange = matrix(c(40,5,60,15),nrow=2),    

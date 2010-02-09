@@ -31,6 +31,7 @@ Statistics}, \bold{16}, 639--656
 
 \seealso{ \code{\link{powerMM}} }
 \examples{
+\dontrun{
 # Example from JBS paper
 doses <- c(0,10,25,50,100,150)                                         
 models <- list(linear = NULL, emax = 25,                               
@@ -42,6 +43,7 @@ pM
 plot(pM)
 plot(pM, line.at = 0.8, model = c("emax", "linear"), summ = "mean")
 plot(pM, line.at = 0.8, model = "none", summ = c("median", "min"))
+}
 }
 \keyword{methods}
 \keyword{hplot}

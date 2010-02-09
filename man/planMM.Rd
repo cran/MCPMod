@@ -63,6 +63,7 @@ models <- list(linear = NULL, emax = 25,
 plM <- planMM(models, doses, n = rep(50,6), alpha = 0.05, scal=200)
 plot(plM)
 
+\dontrun{
 # example, where means are directly specified
 # doses   
 dvec <- c(0, 10, 50, 100)
@@ -73,5 +74,6 @@ mu3 <- c(1, 1, 1, 2)
 mMat <- cbind(mu1, mu2, mu3)
 dimnames(mMat)[[1]] <- dvec
 planMM(muMat = mMat, doses = dvec, n = 30)
+}
 }
 \keyword{ design }

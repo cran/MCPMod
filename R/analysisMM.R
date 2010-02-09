@@ -93,8 +93,7 @@ pValues <-
   pVals <- numeric(nMod)
   for(i in 1:nMod){
     pVals[i] <-   1 - pmvt(lower[,i], upper[,i], df = nDF, corr = corMat, 
-                   maxpts = ctrl$maxpts, abseps = ctrl$abseps, 
-                   releps = ctrl$releps, ...)
+                   algorithm = ctrl, ...)
   }
   pVals
 }

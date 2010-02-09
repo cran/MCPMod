@@ -30,6 +30,7 @@ in each panel, where \code{len} is an argument of the \code{LP} function.
 
 \seealso{ \code{\link{LP}} }
 \examples{
+\dontrun{
 doses <- c(0,10,25,50,100,150)                                           
 models <- list(linear=NULL, emax=c(25),
            logistic=c(50,10.88111), exponential=c(85),
@@ -42,6 +43,7 @@ LPobj <- LP(models, model = "emax", type = "both", paramRange = c(10,70),
 plot(LPobj)
 plot(LPobj, line = FALSE, type = "LP1")
 plot(LPobj, type = "LP1", spldf = 9)
+}
 }
 \keyword{methods}
 \keyword{hplot}

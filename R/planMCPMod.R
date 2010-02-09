@@ -326,10 +326,12 @@ modContr <-
 # control parameters for functions in package mvtnorm
 mvtnorm.control <-
   function(maxpts = 30000, abseps = 0.001,
-           interval = c(-10,10), releps = 0, ...)
+           interval = c(-10,10), releps = 0)
 {
-  list(interval = interval, maxpts = maxpts, abseps = abseps,
-       releps = releps, ...)
+  out <- list(interval = interval, maxpts = maxpts, abseps = abseps,
+       releps = releps)
+  class(out) <- "GenzBretz"
+  out
 }
   
 critVal <-
@@ -370,8 +372,8 @@ critVal <-
   } else {
     ctrl <- control
   }
-  qmvtCall <- c(list(1-alpha, tail = tail, df = nDF,
-                     corr = corMat), ctrl)
+  qmvtCall <- c(list(1-alpha, tail = tail, df = nDF, corr = corMat, 
+                     algorithm=ctrl, interval=ctrl$interval))
   do.call("qmvt", qmvtCall)$quantile
 }
 
@@ -805,7 +807,7 @@ powCalc <-
   }
   ctrl$interval <- NULL      # not used with pmvt
   pmvtCall <- c(list(lower, upper, df = nDF, corr = corMat,
-                     delta = delta), ctrl)
+                     delta = delta, algorithm=ctrl))
   as.vector(1 - do.call("pmvt", pmvtCall))
 }
 ### example call

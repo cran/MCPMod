@@ -2,13 +2,13 @@
 \alias{mvtnorm.control}
 \title{ Control options for pmvt and qmvt functions }
 \description{
-  Returns a list with control parameters for the \code{pmvt} and
-  \code{qmvt} functions from the \code{mvtnorm} package, see the
-  corresponding documentation for more information.
+  Returns a list with control parameters (an object of class GenzBretz) 
+  for the \code{pmvt} and \code{qmvt} functions from the \code{mvtnorm} 
+  package, see the corresponding documentation for more information.
 }
 \usage{
 mvtnorm.control(maxpts = 30000, abseps = 0.001,
-                interval = c(-10, 10), releps = 0, \dots)
+                interval = c(-10, 10), releps = 0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
