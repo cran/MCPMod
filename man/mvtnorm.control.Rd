@@ -8,7 +8,7 @@
 }
 \usage{
 mvtnorm.control(maxpts = 30000, abseps = 0.001,
-                interval = c(-10, 10), releps = 0)
+                interval = c(0,10), releps = 0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

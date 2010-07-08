@@ -326,7 +326,7 @@ modContr <-
 # control parameters for functions in package mvtnorm
 mvtnorm.control <-
   function(maxpts = 30000, abseps = 0.001,
-           interval = c(-10,10), releps = 0)
+           interval = c(0,10), releps = 0)
 {
   out <- list(interval = interval, maxpts = maxpts, abseps = abseps,
        releps = releps)

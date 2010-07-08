@@ -1,12 +1,8 @@
-To do (as recently discussed with Jose and Frank)
+To do 
 high priority
-- allow for additional covariates
-- more robust fitting procedure (use parameter 
-  bounds for non-linear parameters)
 - allow for dose finding with active control
 
 lower priority
-- allow for dose estimation with active control group
 - bootstrap methods for precision of the target dose
 - allow for different maxEffs (and baselines)
   for planning
@@ -17,4 +13,4 @@ lower priority
   estimate (under a certain dose design) by simulation
 - Function to interactively choose guesstimates
 - verbose argument for print.summary.MCPMod?
-- function to calculate MED-optimal robust designs
+

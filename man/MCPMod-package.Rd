@@ -18,8 +18,8 @@ Design and Analysis of Dose-Finding Studies
 \tabular{ll}{
 Package: \tab MCPMod\cr
 Type: \tab Package\cr
-Version: \tab 1.0-6\cr
-Date: \tab 2009-02-09\cr
+Version: \tab 1.0-7\cr
+Date: \tab 2009-07-08\cr
 License: \tab GPL-3\cr
 }
 }

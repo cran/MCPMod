@@ -1,3 +1,12 @@
+2010-07-08 Bjoern Bornkamp
+    * Changed mvtnorm.control default argument for "interval"
+    to reflect recent changes in mvtnorm package.
+    * Reduced size of test file to reduce check time.
+    * Excluded Sweave file and included pre-compiled vignette pdf
+    to reduce computing on CRAN. 
+    * All further development of MCPMod software is now in the
+    DoseFinding package.
+
 2010-02-09 Bjoern Bornkamp
     * Adapted control argument to have class GenzBretz to reflect
     changes in mvtnorm package.

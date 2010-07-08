@@ -19,13 +19,13 @@ models <- list(linear = NULL, emax = 25,
                logistic = c(50, 10.88111), exponential= 85,            
                betaMod=matrix(c(0.33,2.31,1.39,1.39), byrow=TRUE, nrow=2))
 planMM(models, doses, n = rep(50,6), alpha = 0.05, scal=200)
-powerMM(models, doses, base = 0, maxEff = 0.4, sigma = 1,       
-        lower = 10, upper = 100, step = 20, scal = 200, alpha = 0.05)
+#powerMM(models, doses, base = 0, maxEff = 0.4, sigma = 1,       
+#        lower = 10, upper = 100, step = 20, scal = 200, alpha = 0.05)
 sampSize(models, doses, base = 0, maxEff = 0.4, sigma = 1,             
          upperN = 80, scal = 200, alpha = 0.05)
-LP(models, model = "emax", type = "both", paramRange = c(10,70),
-    doses = doses, base = 0, maxEff = 0.4, sigma = 1, n = 60,
-    alpha = 0.05, len = 15, scal = 200)
+#LP(models, model = "emax", type = "both", paramRange = c(10,70),
+#    doses = doses, base = 0, maxEff = 0.4, sigma = 1, n = 60,
+#    alpha = 0.05, len = 15, scal = 200)
     
 # Example from R News 1(2) p. 28, 29
 CM <- c(1, 1, 1, 0, 0, -1, 0, 0, 1, 0, 0, -1, 0, 0,
