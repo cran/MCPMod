@@ -1,3 +1,8 @@
+2014-11-26 Bjoern Bornkamp
+    * Minor change to comply with CRAN policies: Removed GPL-3 
+    licence in the source distribution, it is referred to in
+    the DESCRIPTION file anyway.
+
 2010-07-08 Bjoern Bornkamp
     * Changed mvtnorm.control default argument for "interval"
     to reflect recent changes in mvtnorm package.
