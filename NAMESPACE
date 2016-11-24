@@ -1,4 +1,8 @@
 import(lattice, mvtnorm)
+importFrom("graphics", "plot", "title")
+importFrom("stats", "AIC", "coef", "deviance", "df.residual", "lm",
+           "na.fail", "na.omit", "nls", "optim", "optimize", "predict",
+           "qt", "rnorm", "sd", "smooth.spline", "var")
 
 export(LP, MCPMod, betaMod, critVal, emax, exponential, fullMod, 
       genDFdata, guesst, getPars, linear, linlog, logistic, modelMeans,
