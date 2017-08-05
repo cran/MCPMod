@@ -1,5 +1,5 @@
-cda39543dd500bdd2e8960176f224031 *ChangeLog
-2974fbf7b20bcf1db1a0fb0e413ccb7a *DESCRIPTION
+3acd1ef2233ab03f78f8761efc80c067 *ChangeLog
+42809b73791936be416768e23e7bf652 *DESCRIPTION
 ad856aa62237425593927a09b8bb3ad4 *NAMESPACE
 6bf1d20304a85b662ee00fcf6d73a4d6 *NEWS
 52f965f5dde980377858e1bc0200d675 *R/analysisMM.R
@@ -8,14 +8,14 @@ cfdf0971a7b256730c7deb226eda2df3 *R/planMCPMod.R
 9a9c69732922970b2ed2d024d59b3e75 *ToDo
 5ad309908ffc41d72d967acd4dfdcea2 *data/IBS.txt.gz
 13fc8850545adede3de0789acaa3a429 *data/biom.txt.gz
-bed273af74a5a07853c602504a9f4d55 *inst/CITATION
+911a43d74a9ea9bf91b6059b5cf7f6d3 *inst/CITATION
 1a32e6d0fd65bead0cb1cefd71a577b2 *inst/README
 11ad1d6d1cc5258fc797031cd7bfa400 *inst/doc/MCPMod.pdf
 9c950cdd5d65301b3a54c6449417135b *man/IBS.Rd
 cc929086b906264ade9efa1123f17031 *man/LP.Rd
 a08ea3187389cafec07184b8eaf198c3 *man/MCPMod-internal.Rd
 a4bef07da896ea0dbd3b891dbd26eec4 *man/MCPMod-package.Rd
-83cb19e1d747d112e76e4f8d2fd49710 *man/MCPMod.Rd
+56a22f2f7da2c85b8567041b4d96d7f7 *man/MCPMod.Rd
 8896d51b7f86b379ba75e6d14c39606a *man/betaMod.Rd
 a87614435c17a1e90d4d52107af0affe *man/biom.Rd
 1f860f3eab015a66259e8236e8dd96f2 *man/critVal.Rd

@@ -165,6 +165,7 @@ of inference, \emph{Biometrics}, \bold{53}, 603--618
           \code{\link{plot.MCPMod}}, \code{\link{mvtnorm.control} }
           }
 \examples{
+\dontrun{
 # (i)
 # example from Biometrics paper p. 743
 data(biom)
@@ -196,7 +197,7 @@ models <- list(emax = 0.1, logistic = c(0.2, 0.08),
              betaMod = c(1, 1))
 dfe3 <- MCPMod(dfData, models, clinRel = 0.4, critV = 1.891, 
            scal = 1.5)
-
+}
 # (ii) Example for constructing a model list
 
 # Contrasts to be included:
@@ -234,6 +235,7 @@ list(linear = NULL, linlog = NULL, emax = c(0.2, 0.3),
 # parameter for the linlog model and the "scal" parameter for the
 # beta model, which are not handed over in the model list.
 
+
 # (iii) example for incorporation of a usermodel
 # simulate dose response data
 dats <- genDFdata("sigEmax", c(e0 = 0, eMax = 1, ed50 = 2, h = 2),
@@ -261,7 +263,7 @@ mods <- list(linear = NULL, quadratic = -0.7)
 pM <- planMM(mods, doses, 20)
 MCPMod(dat, models = NULL, clinRel = 0.3, contMat = pM$contMat,
      critV = pM$critVal)
-
+\dontrun{
 # (v) Using MCPMod for mutiple contrast tests only
 mu1 <- c(1, 2, 2, 2, 2)                      
 mu2 <- c(1, 1, 2, 2, 2)                      
@@ -273,6 +275,7 @@ pM <- planMM(muMat = mMat, doses = doses, n = 20, cV = FALSE)
 fit <-MCPMod(dat, models = NULL, clinRel = 0.3, contMat = pM$contMat,
         pVal = TRUE, testOnly = TRUE)
 summary(fit)
+}
 }
 \keyword{ models }
 \keyword{ htest }

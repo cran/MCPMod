@@ -1,3 +1,7 @@
+2017-08-05 Bjoern Bornkamp
+    * Minor change to comply with CRAN policies: Removed
+    unescaped accents in CITATION file.
+
 2014-11-26 Bjoern Bornkamp
     * Minor change to comply with CRAN policies: Removed GPL-3 
     licence in the source distribution, it is referred to in

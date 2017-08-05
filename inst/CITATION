@@ -1,23 +1,28 @@
 citHeader("To cite MCPMod in publications use:")
 
-citEntry(entry = "Article",
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Manual",
+  title        = "MCPMod: An R Package for the Design and Analysis of Dose-Finding Studies",
+  author       = personList(person("Bjoern", "Bornkamp"),
+                   person("Jose", "Pinheiro"),
+                   person("Frank", "Bretz")),
+  year         = year,
+  note         = note,
+  url = "https://CRAN.R-project.org/package=MCPMod")
+
+bibentry(bibtype = "Article",
   title        = "{MCPMod}: An {R} Package for the Design and Analysis of Dose-Finding Studies",
-  author       = personList(as.person("Bj{\"o}rn Bornkamp"),
-                   as.person("Jos{\'e} Pinheiro"),
-                   as.person("Frank Bretz")),
+  author       = personList(person("Bjoern", "Bornkamp"),
+                   person("Jose", "Pinheiro"),
+                   person("Frank", "Bretz")),
   journal      = "Journal of Statistical Software",
   year         = "2009",
   volume       = "29",
   number       = "7",
   pages        = "1--23",
-  url          = "http://www.jstatsoft.org/v29/i07/",
-
-  textVersion  =
-  paste("Bjoern Bornkamp, Jose Pinheiro, Frank Bretz (2009).",
-        "MCPMod: An R Package for the Design and Analysis of Dose-Finding Studies.",
-        "Journal of Statistical Software 29(7), 1-23.",
-        "URL http://www.jstatsoft.org/v29/i07/.")
-)
+  url          = "http://www.jstatsoft.org/v29/i07/")
 
 
 
