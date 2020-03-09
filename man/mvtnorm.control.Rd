@@ -17,7 +17,6 @@ mvtnorm.control(maxpts = 30000, abseps = 0.001,
   \item{interval}{ A vector containing the end-points of the interval to be searched 
                    for the critical value. }
   \item{releps}{ Relative error tolerance as double.  }
-  \item{\dots}{ Additional arguments to \code{pmvt} or \code{qmvt}.  }
 }
 
 \seealso{ \code{\link[mvtnorm]{pmvt}}, \code{\link[mvtnorm]{qmvt}} }

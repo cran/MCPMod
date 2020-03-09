@@ -1,5 +1,5 @@
 3acd1ef2233ab03f78f8761efc80c067 *ChangeLog
-42809b73791936be416768e23e7bf652 *DESCRIPTION
+f7c4640d78feed5b5a8a78a44d9da7d5 *DESCRIPTION
 ad856aa62237425593927a09b8bb3ad4 *NAMESPACE
 6bf1d20304a85b662ee00fcf6d73a4d6 *NEWS
 52f965f5dde980377858e1bc0200d675 *R/analysisMM.R
@@ -29,7 +29,7 @@ e848207eb760394c1239a6ee6e6c33f9 *man/linear.Rd
 8fad981a07c08d9cced94fbd194ecb86 *man/linlog.Rd
 785ab788346859d05a2df9446c2e746d *man/logistic.Rd
 47b1ac248a8062a5c1b11b01238c8702 *man/modelMeans.Rd
-4cdcb0a24872987bfceb48c7ccab36cb *man/mvtnorm.control.Rd
+5ed54c5ab4ee2555394c82f54bd93190 *man/mvtnorm.control.Rd
 da0984a1c0f56f931b84481edc7ae78c *man/planMM.Rd
 d34b50c8911dae30711abfff5818d7a2 *man/plot.LP.Rd
 e2587e6cb8a07f3ebd196a214241ce3d *man/plot.MCPMod.Rd
